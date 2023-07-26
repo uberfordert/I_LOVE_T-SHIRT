@@ -126,3 +126,10 @@ button {
   cursor: pointer;
   border-radius: 2px;
 }
+
+.paypal-button {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}

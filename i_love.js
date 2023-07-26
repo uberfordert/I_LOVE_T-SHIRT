@@ -39,3 +39,27 @@ buyButton.addEventListener('click', () => {
   // Replace the URL below with the actual PayPal page link
   window.open('https://www.paypal.com/your_paypal_link_here', '_blank');
 });
+
+paypal.Buttons({
+  style: {
+    shape: 'pill',
+    color: 'gold',
+    layout: 'horizontal',
+    label: 'paypal',
+  },
+  createOrder: function(data, actions) {
+    return actions.order.create({
+      purchase_units: [{
+        amount: {
+          value: '10.00', // Replace this with the actual purchase amount
+        },
+      }],
+    });
+  },
+  onApprove: function(data, actions) {
+    return actions.order.capture().then(function(details) {
+      // Implement the success behavior here (e.g., redirect to a success page, show a success message, etc.)
+      console.log('Payment successful');
+    });
+  }
+}).render('#paypal-button-container');
