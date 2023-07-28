@@ -37,7 +37,7 @@ topImageLink.addEventListener('click', () => {
 const buyButton = document.querySelector('.buy-button button');
 buyButton.addEventListener('click', () => {
   // Replace the URL below with the actual PayPal page link
-  window.open('https://www.paypal.com/your_paypal_link_here', '_blank');
+  window.open('https://www.paypal.com/sdk/js?client-id=Adqe_kZLmfknC3FVKQ9rME3Rwa3q-99Y7OtNht9MY2UMRy_sp8owMH1r0GQ2GbSSOXR_xx-_GvrSa5Rq&currency=EUR', '_blank');
 });
 
 paypal.Buttons({
