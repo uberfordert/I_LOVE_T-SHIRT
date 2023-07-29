@@ -28,6 +28,7 @@ buyButton.addEventListener('click', () => {
   window.open('https://www.paypal.com/sdk/js?client-id=Adqe_kZLmfknC3FVKQ9rME3Rwa3q-99Y7OtNht9MY2UMRy_sp8owMH1r0GQ2GbSSOXR_xx-_GvrSa5Rq&currency=EUR', '_blank');
 });
 
+// Create the PayPal button and render it in the 'paypal-button-container' div
 paypal.Buttons({
   style: {
     shape: 'pill',
