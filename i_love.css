@@ -133,3 +133,6 @@ button {
   left: 50%;
   transform: translateX(-50%);
 }
+.paypal-button {
+  display: inline-block;
+}
