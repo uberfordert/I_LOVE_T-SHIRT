@@ -1,35 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Interactive Website</title>
-  <link rel="stylesheet" href="i_love.css">
-</head>
-<body>
-  <div class="container">
-    <div class="top-left">
-      <a href="https://www.uberfordert.com" id="image-link" target="_blank">
-        <img id="image-link-toggle" src="1-back.png" alt="Clickable Image"> 
-      </a>
-    </div>
-    <div class="centered">
-      <div class="image-container">
-        <img id="image-center-toggle" src="i_love-white.png" alt="PNG Image">
-        <input type="text" id="interactive-text" placeholder="Enter text here">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interactive Website</title>
+    <link rel="stylesheet" href="styles/i_love.css" />
+    <link rel="stylesheet" href="styles/slider.css" />
+  </head>
+  <body>
+    <div class="app">
+      <div class="header">
+        <a href="https://www.uberfordert.com" id="image-link" target="_blank">
+          <img
+            class="header-image"
+            id="image-link-toggle"
+            src="assets/2-back.png"
+            alt="Clickable Image"
+          />
+        </a>
+      </div>
+
+      <!-- list of items-->
+
+      <div class="shirt">
+        <div class="switch-container">
+          <label class="switch">
+            <input type="checkbox" id="image-switch" />
+            <span class="slider round"></span>
+          </label>
+        </div>
+        <div class="shirt-image-container">
+          <img
+            id="image-center-toggle"
+            src="assets/i_love-white.png"
+            alt="PNG Image"
+          />
+          <input
+            class="shirt-image-text"
+            type="text"
+            id="interactive-text"
+            placeholder="Enter text here"
+          />
+        </div>
       </div>
     </div>
-  </div>
-  <div class="switch-container">
-    <label class="switch">
-      <input type="checkbox" id="image-switch">
-      <span class="slider"></span>
-    </label>
-  </div>
-  <div class="buy-button">
-    <div id="paypal-button-container" class="paypal-button"></div>
-  </div>
-  <script src="i_love.js"></script>
-  <script src="https://www.paypal.com/sdk/js?client-id=Adqe_kZLmfknC3FVKQ9rME3Rwa3q-99Y7OtNht9MY2UMRy_sp8owMH1r0GQ2GbSSOXR_xx-_GvrSa5Rq&currency=EUR"></script>
-</body>
+    <div class="save-item-text">
+      <h2>Press Enter to save</h2>
+    </div>
+
+    <div class="paypal-container>"><p>Paypal buttons here</p></div>
+
+    <!-- 
+    <div class="buy-button">
+      <div id="paypal-button-container" class="paypal-button"></div>
+    </div>
+    -->
+    <div class="footer">
+      <ul>
+        <li>
+          <a href="www.instagram.com">instagram image</a>
+        </li>
+        <li><a href="#">home</a></li>
+        <li><a href="?">?</a></li>
+      </ul>
+    </div>
+
+    <script src="i_love.js"></script>
+    <script src="https://www.paypal.com/sdk/js?client-id=Adqe_kZLmfknC3FVKQ9rME3Rwa3q-99Y7OtNht9MY2UMRy_sp8owMH1r0GQ2GbSSOXR_xx-_GvrSa5Rq&currency=EUR"></script>
+  </body>
 </html>
