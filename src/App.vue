@@ -11,6 +11,6 @@ const products = reactive({
 
 <template>
   <ShoppingCart></ShoppingCart>
-  <Footer></Footer>
   <Shirt></Shirt>
+  <Footer></Footer>
 </template>

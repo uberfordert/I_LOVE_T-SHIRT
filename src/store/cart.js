@@ -1,10 +1,11 @@
 import { defineStore } from "pinia";
 import { ref, reactive } from "vue";
+import { useItemVisibilityStore } from "./itemVisibility";
 
 export const useCartStore = defineStore("cart", () => {
   const tempCartItem = reactive({
     color: "",
-    size: "",
+    size: "M",
     text: "",
   });
   const cartList = reactive({
@@ -18,7 +19,6 @@ export const useCartStore = defineStore("cart", () => {
   });
 
   function resetTempCartItem() {
-    tempCartItem.color = "";
     tempCartItem.size = "";
     tempCartItem.text = "";
     proceedToEditShirtSize.value = false;
@@ -27,6 +27,7 @@ export const useCartStore = defineStore("cart", () => {
     console.log(newCartItem, "newCartItem, cart.js");
     cartList.list.push(newCartItem);
     resetTempCartItem();
+    useItemVisibilityStore().isEditSizeVisible = false;
   }
 
   function deleteCartItem(oldCartItem) {
