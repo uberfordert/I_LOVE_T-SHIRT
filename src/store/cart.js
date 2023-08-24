@@ -27,7 +27,6 @@ export const useCartStore = defineStore("cart", () => {
     console.log(newCartItem, "newCartItem, cart.js");
     cartList.list.push(newCartItem);
     resetTempCartItem();
-    useItemVisibilityStore().isEditSizeVisible = false;
   }
 
   function deleteCartItem(oldCartItem) {

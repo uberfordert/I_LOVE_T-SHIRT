@@ -2,7 +2,8 @@
   <div class="shopping-cart">
     <ul>
       <li v-for="shirt in useCartStore().cartList.list" :key="shirt.text">
-        {{ shirt.text }} {{ shirt.size }} {{ shirt.color }}
+        qt:1 {{ shirt.text }} {{ shirt.size }} {{ shirt.color }}
+        <button @click="deleteShirt(shirt)">x</button>
       </li>
     </ul>
     <div v-if="useItemVisibilityStore().isEditSizeVisible">
@@ -43,6 +44,12 @@ const addItemToCart = () => {
     console.log(useCartStore().cartList.list);
     useItemVisibilityStore().isEditSizeVisible = false;
   }
+};
+
+const deleteShirt = (shirt) => {
+  useCartStore().cartList.list = useCartStore().cartList.list.filter(
+    (t) => t !== shirt
+  );
 };
 
 //Todo: try to change logic by only using the store
