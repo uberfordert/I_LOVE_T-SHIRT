@@ -1,10 +1,29 @@
 <template>
   <div class="shopping-cart">
     <ul>
-      <li v-for="shirt in useCartStore().cartList.list" :key="shirt.text">
-        qt:1 {{ shirt.text }} {{ shirt.size }} {{ shirt.color }}
-        <button @click="deleteShirt(shirt)">x</button>
-      </li>
+      <table
+        v-if="useCartStore().cartList.list.length != 0"
+        class="shoppingCartTable"
+      >
+        <thead>
+          <tr>
+            <th>qty</th>
+            <th>text</th>
+            <th>size</th>
+            <th>color</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="shirt in useCartStore().cartList.list" :key="shirt.text">
+            <th>1</th>
+            <th>{{ shirt.text }}</th>
+            <th>{{ shirt.size }}</th>
+            <th>{{ shirt.color }}</th>
+            <th><button @click="deleteShirt(shirt)">x</button></th>
+          </tr>
+        </tbody>
+      </table>
     </ul>
     <div v-if="useItemVisibilityStore().isEditSizeVisible">
       {{ useCartStore().tempCartItem.text }}
