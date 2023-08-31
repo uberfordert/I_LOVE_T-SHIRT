@@ -3,6 +3,11 @@ import { ref, reactive } from "vue";
 import { useItemVisibilityStore } from "./itemVisibility";
 
 export const useCartStore = defineStore("cart", () => {
+  const SHIRT_COST = 25.0;
+
+  const totalPrice = reactive({
+    amount: 0,
+  });
   const tempCartItem = reactive({
     color: "",
     size: "M",
@@ -26,14 +31,17 @@ export const useCartStore = defineStore("cart", () => {
   function addCartItem(newCartItem) {
     console.log(newCartItem, "newCartItem, cart.js");
     cartList.list.push(newCartItem);
+    totalPrice.amount + SHIRT_COST;
     resetTempCartItem();
   }
 
   function deleteCartItem(oldCartItem) {
     cartList.value = cartList.value.filter((t) => t !== oldCartItem);
+    totalPrice.amount - SHIRT_COST;
   }
 
   return {
+    totalPrice,
     cartList,
     cartListComplete,
     proceedToEditShirtSize,

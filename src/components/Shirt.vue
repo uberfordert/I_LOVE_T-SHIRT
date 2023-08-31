@@ -1,6 +1,6 @@
 <template>
   <!-- The main container for the shirt customization -->
-  <div class="shirt">
+  <div class="shirt my-10">
     <ErrorPopUp></ErrorPopUp>
     <!-- Container for the switch to toggle between shirt colors -->
     <div class="switch-container p-5">
@@ -90,19 +90,3 @@ const addItem = () => {
   }
 };
 </script>
-<style scoped>
-.v-enter-active {
-  animation: fadeIn 1s;
-}
-.v-leave-active {
-  animation: fadeIn 1s reverse;
-}
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-</style>

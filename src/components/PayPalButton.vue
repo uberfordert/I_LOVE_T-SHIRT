@@ -15,7 +15,7 @@ onMounted(() => {
   script.src =
     "https://www.paypal.com/sdk/js?client-id=" +
     PAYPAL_CLIENT_ID +
-    "&disable-funding=credit,card,eps,sofort";
+    "&disable-funding=credit,eps,sofort";
   script.async = true;
   script.onload = initPayPalButton;
   document.body.appendChild(script);

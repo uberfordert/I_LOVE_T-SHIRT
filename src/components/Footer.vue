@@ -1,5 +1,5 @@
 <template>
-  <div class="footer">
+  <div class="footer z-50">
     <ul>
       <li>
         <a href="www.instagram.com">instagram image</a>

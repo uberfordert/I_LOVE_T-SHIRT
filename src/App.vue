@@ -13,13 +13,12 @@ const products = reactive({
 </script>
 
 <template>
-  <div style="overflow-y: scroll">
+  <div style="">
     <Header></Header>
     <ShoppingCart></ShoppingCart>
     <Shirt></Shirt>
-    <div class="max-h-20">
+    <div class="">
       <PayPal></PayPal>
     </div>
   </div>
-  <Footer></Footer>
 </template>
