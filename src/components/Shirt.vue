@@ -1,8 +1,9 @@
 <template>
   <!-- The main container for the shirt customization -->
   <div class="shirt">
+    <ErrorPopUp></ErrorPopUp>
     <!-- Container for the switch to toggle between shirt colors -->
-    <div class="switch-container">
+    <div class="switch-container p-5">
       <label class="switch">
         <input @click="switchClick" type="checkbox" id="image-switch" />
         <span class="slider round"></span>
@@ -18,15 +19,19 @@
         id="interactive-text"
         placeholder="Enter text here"
       />
-      <button @click="addItem">Add Item</button>
+      <button class="my-2 px-4 py-2 shadow-lg rounded-xl" @click="addItem">
+        continue
+      </button>
     </div>
   </div>
 </template>
 
 <script setup>
-import { onBeforeMount, onMounted, reactive, watch } from "vue";
+import { onBeforeMount, onMounted, reactive, ref, watch } from "vue";
 import { useCartStore } from "../store/cart.js";
+import { useErrorStore } from "../store/error.js";
 import { useItemVisibilityStore } from "../store/itemVisibility.js";
+import ErrorPopUp from "./ErrorPopUp.vue";
 
 // Constants for shirt color modes and URLs
 const SHIRT_DARK_MODE = "shirt-image-text-darkmode";
@@ -71,6 +76,12 @@ const switchClick = () => {
 const addItem = () => {
   if (useCartStore().tempCartItem.text === "") {
     // If the text input is empty, add a default item to the cart
+    useErrorStore().show = true;
+    useErrorStore().message = "shirt cannot be empty";
+    setTimeout(() => {
+      useErrorStore().show = false;
+      useErrorStore().message = "";
+    }, 2000);
     console.log("Empty shirt");
   } else {
     // If text input is not empty, prepare the cart item for editing size
@@ -79,3 +90,19 @@ const addItem = () => {
   }
 };
 </script>
+<style scoped>
+.v-enter-active {
+  animation: fadeIn 1s;
+}
+.v-leave-active {
+  animation: fadeIn 1s reverse;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+</style>

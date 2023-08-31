@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="mx-6 my-6 items-center">
     <PayPalButton
       v-if="
         !usePaypalStore().succesfulPurchase &&
@@ -9,6 +9,7 @@
     />
     <div v-if="usePaypalStore().succesfulPurchase">Kauf abgeschlossen</div>
   </div>
+  <h1>Payment Options:</h1>
 </template>
 
 <script setup>

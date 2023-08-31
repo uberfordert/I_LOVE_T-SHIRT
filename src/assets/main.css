@@ -1,5 +1,9 @@
 @import url("slider.css");
 @import url("shoppingCartTable.css");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 body {
   margin: 0;
   padding: 0;
@@ -67,7 +71,6 @@ body {
   color: black;
   box-shadow: none;
 }
-
 .footer ul {
   position: fixed;
   bottom: 0;

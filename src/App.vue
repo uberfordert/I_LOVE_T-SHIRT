@@ -5,6 +5,7 @@ import Footer from "./components/Footer.vue";
 import Shirt from "./components/Shirt.vue";
 import ShoppingCart from "./components/ShoppingCart.vue";
 import PayPal from "./components/PayPal.vue";
+import Header from "./components/Header.vue";
 
 const products = reactive({
   list: [],
@@ -12,10 +13,13 @@ const products = reactive({
 </script>
 
 <template>
-  <div style="overflow-y: auto">
+  <div style="overflow-y: scroll">
+    <Header></Header>
     <ShoppingCart></ShoppingCart>
     <Shirt></Shirt>
-    <PayPal></PayPal>
-    <Footer></Footer>
+    <div class="max-h-20">
+      <PayPal></PayPal>
+    </div>
   </div>
+  <Footer></Footer>
 </template>

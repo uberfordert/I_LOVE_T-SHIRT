@@ -12,7 +12,10 @@ const paypalButtonContainer = ref(null);
 
 onMounted(() => {
   const script = document.createElement("script");
-  script.src = "https://www.paypal.com/sdk/js?client-id=" + PAYPAL_CLIENT_ID;
+  script.src =
+    "https://www.paypal.com/sdk/js?client-id=" +
+    PAYPAL_CLIENT_ID +
+    "&disable-funding=credit,card,eps,sofort";
   script.async = true;
   script.onload = initPayPalButton;
   document.body.appendChild(script);
@@ -21,6 +24,9 @@ onMounted(() => {
 const initPayPalButton = () => {
   paypal
     .Buttons({
+      style: {
+        color: "black",
+      },
       createOrder: (data, actions) => {
         return actions.order.create({
           purchase_units: [
