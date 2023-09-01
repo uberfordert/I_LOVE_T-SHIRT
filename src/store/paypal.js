@@ -5,6 +5,7 @@ export const usePaypalStore = defineStore("paypal", () => {
   const succesfulPurchase = reactive({
     value: false,
   });
+  const details = reactive({});
   return {
     succesfulPurchase,
   };

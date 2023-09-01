@@ -51,7 +51,7 @@
     <Transition>
       <div
         class="mx-6 my-6 text-xl"
-        v-if="useItemVisibilityStore().isEditSizeVisible"
+        v-if="useItemVisibilityStore().isEditSizeVisible == true"
       >
         <h2 class="animate-bounce">edit shirt</h2>
         <table class="min-w-full text-center text-xl font-light">
@@ -146,17 +146,17 @@ const deleteShirt = (shirt) => {
     (t) => t !== shirt
   );
   useCartStore().totalPrice.amount -= SHIRT_PRICE;
-  isButtonDisabled = true;
+  isButtonDisabled.value = true;
 };
 //Todo: try to change logic by only using the store
 </script>
 
 <style scoped>
 .v-enter-active {
-  animation: fadeIn 1s;
+  animation: fadeIn 750ms;
 }
 .v-leave-active {
-  animation: fadeIn 0.75s reverse;
+  animation: fadeIn 750ms reverse;
 }
 @keyframes fadeIn {
   0% {
